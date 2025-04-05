@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dronix - Venta y Mantenimiento de Drones</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400&family=Poppins:wght@300&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     /* Estilos generales */
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #0f172a, #1e293b);
-      color: white;
+      background: linear-gradient(to right, #121212, #1a1a1a);
+      color: #f1f1f1;
       scroll-behavior: smooth;
     }
 
@@ -34,7 +34,7 @@
       }
 
       50% {
-        transform: translateY(-15px);
+        transform: translateY(-20px);
       }
 
       100% {
@@ -44,40 +44,43 @@
 
     /* Header */
     header {
-      padding: 50px;
+      padding: 70px 20px;
       text-align: center;
       animation: fadeIn 2s ease-out;
     }
 
     header img {
-      width: 180px;
+      width: 200px;
+      margin-bottom: 20px;
     }
 
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.5em;
-      color: #f97316;
-      margin-top: 20px;
-      letter-spacing: 2px;
+      font-size: 4em;
+      color: #ff9f00;
+      margin-top: 10px;
+      letter-spacing: 3px;
       animation: bounce 2s infinite;
     }
 
     p {
-      font-size: 1.2em;
+      font-size: 1.4em;
+      color: #bbb;
+      line-height: 1.6;
     }
 
     /* Secciones */
     .seccion {
       padding: 50px 20px;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
       animation: fadeIn 2s ease-out;
     }
 
     .titulo {
-      color: #f97316;
+      color: #ff9f00;
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin-bottom: 20px;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -85,30 +88,56 @@
 
     /* Estilo para los botones */
     .boton-contacto {
-      background-color: #f97316;
+      background-color: #ff9f00;
       border: none;
       padding: 18px 35px;
       color: white;
       font-size: 1.2em;
       cursor: pointer;
-      border-radius: 12px;
+      border-radius: 8px;
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .boton-contacto:hover {
-      background-color: #ff5c00;
+      background-color: #e68900;
       transform: scale(1.05);
     }
 
     /* Estilo para el footer */
     footer {
-      background-color: #0f172a;
+      background-color: #121212;
       text-align: center;
       padding: 20px;
       font-size: 1em;
-      color: #ccc;
+      color: #bbb;
       margin-top: 50px;
+    }
+
+    /* Sección de Redes Sociales */
+    .contacto {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .contacto img {
+      width: 60px;
+      height: 60px;
+      margin: 0 20px;
+      transition: all 0.3s ease;
+      border-radius: 50%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .contacto img:hover {
+      transform: scale(1.2);
+    }
+
+    .contacto h3 {
+      font-size: 2.5em;
+      color: #ff9f00;
+      margin-bottom: 30px;
+      font-family: 'Poppins', sans-serif;
     }
 
     /* Estilo para listas y servicios */
@@ -119,18 +148,18 @@
     }
 
     ul li {
-      margin: 15px 0;
+      margin: 20px 0;
     }
 
     ul li i {
-      color: #f97316;
-      margin-right: 10px;
+      color: #ff9f00;
+      margin-right: 15px;
     }
 
     /* Diseño responsivo */
     @media (max-width: 768px) {
       h1 {
-        font-size: 2.5em;
+        font-size: 2.8em;
       }
 
       .seccion {
@@ -139,6 +168,28 @@
 
       footer {
         font-size: 0.9em;
+      }
+
+      .contacto img {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+      }
+
+      .contacto h3 {
+        font-size: 1.8em;
+      }
+    }
+
+    /* Para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+      .contacto img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .contacto h3 {
+        font-size: 1.5em;
       }
     }
   </style>
@@ -155,7 +206,7 @@
   <!-- Sección ¿Quiénes somos? -->
   <section class="seccion">
     <div class="titulo">¿Quiénes somos?</div>
-    <p>En Dronix nos especializamos en ofrecer drones de alta calidad, así como servicios profesionales de mantenimiento y reparación. Nuestra misión es llevar la tecnología aérea a otro nivel, ofreciendo innovación, confianza y accesibilidad para todos.</p>
+    <p>En Dronix nos especializamos en ofrecer drones de alta calidad, servicios profesionales de mantenimiento y reparación. Nuestra misión es llevar la tecnología aérea a todos, brindando soluciones accesibles y de alto rendimiento.</p>
   </section>
 
   <!-- Sección Servicios -->
@@ -180,6 +231,19 @@
     <div class="titulo">Visión y Meta</div>
     <p><strong>Visión:</strong> Ser la empresa líder en el mercado de drones, proporcionando soluciones innovadoras y accesibles para profesionales y entusiastas. Buscamos transformar la forma en que las personas interactúan con la tecnología aérea, ofreciendo productos de calidad, servicio excepcional y un compromiso constante con la innovación.</p>
     <p><strong>Meta:</strong> Proporcionar drones de alta calidad y servicios de mantenimiento con un enfoque en la excelencia técnica y la satisfacción del cliente. Nuestro objetivo es expandir nuestro alcance, convirtiéndonos en el proveedor principal para quienes buscan soluciones aéreas de vanguardia.</p>
+  </section>
+
+  <!-- Sección Redes Sociales -->
+  <section class="contacto">
+    <h3>¡Síguenos en nuestras redes sociales!</h3>
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/dronix_mex/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    </a>
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/share/1A6NvFfBQo/?mibextid=wwXIfr" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+    </a>
   </section>
 
   <!-- Footer -->
