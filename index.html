@@ -5,20 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dronix - Venta y Mantenimiento de Drones</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     /* Estilos generales */
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #1e293b;
+      background: linear-gradient(to right, #1e293b, #0f172a);
       color: white;
     }
 
     header {
       background-color: #0f172a;
-      padding: 20px;
+      padding: 40px;
       text-align: center;
+      animation: fadeIn 2s ease-out;
     }
 
     header img {
@@ -26,7 +28,7 @@
     }
 
     h1 {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 2.5em;
       margin-top: 10px;
     }
@@ -44,7 +46,17 @@
       margin-bottom: 10px;
     }
 
-    /* Estilo para los botones */
+    .contacto img {
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
+    }
+
+    .contacto h3 {
+      font-size: 1.5em;
+      color: #f97316;
+    }
+
     .boton-contacto {
       background-color: #f97316;
       border: none;
@@ -56,7 +68,6 @@
       text-decoration: none;
     }
 
-    /* Estilo para el footer */
     footer {
       background-color: #0f172a;
       text-align: center;
@@ -65,75 +76,60 @@
       color: #ccc;
     }
 
-    /* Estilos de la sección de redes sociales */
-    .contacto img {
-      width: 50px;
-      height: 50px;
-      margin: 0 10px;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
-    .contacto h3 {
-      font-size: 1.5em;
-      color: #f97316;
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+      .seccion {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <img src="logo_dronix.png" alt="Logo Dronix">
     <h1>Dronix</h1>
     <p>Innovación en venta y mantenimiento de drones</p>
   </header>
 
-  <!-- Sección ¿Quiénes somos? -->
   <section class="seccion">
     <div class="titulo">¿Quiénes somos?</div>
     <p>En Dronix nos especializamos en ofrecer drones de alta calidad, así como servicios profesionales de mantenimiento y reparación. Nuestra misión es llevar la tecnología aérea a otro nivel.</p>
   </section>
 
-  <!-- Sección Servicios -->
   <section class="seccion">
     <div class="titulo">Servicios</div>
     <ul>
-      <li>Venta de drones profesionales y recreativos</li>
-      <li>Mantenimiento preventivo y correctivo</li>
-      <li>Asesoría técnica personalizada</li>
+      <li><i class="fas fa-drone"></i> Venta de drones</li>
+      <li><i class="fas fa-tools"></i> Mantenimiento preventivo y correctivo</li>
+      <li><i class="fas fa-headset"></i> Asesoría técnica personalizada</li>
     </ul>
   </section>
 
-  <!-- Sección Contacto -->
   <section class="seccion">
     <div class="titulo">Contáctanos</div>
     <p>¿Tienes dudas o quieres cotizar un servicio? ¡Estamos para ayudarte!</p>
     <a href="https://wa.me/524776120900" class="boton-contacto" target="_blank">Escríbenos por WhatsApp</a>
   </section>
 
-  <!-- Sección Visión y Meta -->
   <section class="seccion">
     <div class="titulo">Visión y Meta</div>
-    <p><strong>Visión:</strong> Ser la empresa líder en el mercado de drones, proporcionando soluciones innovadoras y accesibles para profesionales y entusiastas. Buscamos transformar la forma en que las personas interactúan con la tecnología aérea, ofreciendo productos de calidad, servicio excepcional y un compromiso constante con la innovación.</p>
-    <p><strong>Meta:</strong> Proporcionar drones de alta calidad y servicios de mantenimiento con un enfoque en la excelencia técnica y la satisfacción del cliente. Nuestro objetivo es expandir nuestro alcance, convirtiéndonos en el proveedor principal para quienes buscan soluciones aéreas de vanguardia.</p>
+    <p><strong>Visión:</strong> Ser la empresa líder en el mercado de drones, proporcionando soluciones innovadoras y accesibles para profesionales y entusiastas.</p>
+    <p><strong>Meta:</strong> Proporcionar drones de alta calidad y servicios de mantenimiento con un enfoque en la excelencia técnica.</p>
   </section>
 
-  <!-- Sección Redes Sociales -->
   <section class="contacto">
     <h3>¡Síguenos en nuestras redes sociales!</h3>
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/dronix_mex/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-    </a>
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/share/1A6NvFfBQo/?mibextid=wwXIfr" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-    </a>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Dronix. Todos los derechos reservados.
-  </footer>
-</body>
-
-</html>
+    <a href="https://
