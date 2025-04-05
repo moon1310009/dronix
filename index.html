@@ -5,100 +5,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dronix - Venta y Mantenimiento de Drones</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300&family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
     /* Estilos generales */
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #0f172a, #1e293b);
+      background-color: #1e293b;
       color: white;
-      scroll-behavior: smooth;
     }
 
-    /* Animaciones */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes bounce {
-      0% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-15px);
-      }
-
-      100% {
-        transform: translateY(0);
-      }
-    }
-
-    /* Header */
     header {
-      padding: 50px;
+      background-color: #0f172a;
+      padding: 20px;
       text-align: center;
-      animation: fadeIn 2s ease-out;
     }
 
     header img {
-      width: 180px;
+      width: 150px;
     }
 
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.5em;
-      color: #f97316;
-      margin-top: 20px;
-      letter-spacing: 2px;
-      animation: bounce 2s infinite;
+      font-size: 2.5em;
+      margin-top: 10px;
     }
 
-    p {
-      font-size: 1.2em;
-    }
-
-    /* Secciones */
     .seccion {
-      padding: 50px 20px;
-      max-width: 1200px;
+      padding: 40px 20px;
+      max-width: 1000px;
       margin: auto;
-      animation: fadeIn 2s ease-out;
     }
 
     .titulo {
       color: #f97316;
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 2em;
+      margin-bottom: 10px;
     }
 
     /* Estilo para los botones */
     .boton-contacto {
       background-color: #f97316;
       border: none;
-      padding: 18px 35px;
+      padding: 15px 30px;
       color: white;
-      font-size: 1.2em;
+      font-size: 1em;
       cursor: pointer;
-      border-radius: 12px;
+      border-radius: 10px;
       text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .boton-contacto:hover {
-      background-color: #ff5c00;
-      transform: scale(1.05);
     }
 
     /* Estilo para el footer */
@@ -106,95 +61,41 @@
       background-color: #0f172a;
       text-align: center;
       padding: 20px;
-      font-size: 1em;
+      font-size: 0.9em;
       color: #ccc;
-      margin-top: 50px;
     }
 
-    /* Sección de Redes Sociales */
-    .contacto {
-      text-align: center;
-      margin-top: 50px;
-    }
-
+    /* Estilos de la sección de redes sociales */
     .contacto img {
-      width: 55px;
-      height: 55px;
-      margin: 0 20px;
-      transition: all 0.3s ease;
-    }
-
-    .contacto img:hover {
-      transform: scale(1.3);
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
     }
 
     .contacto h3 {
-      font-size: 2em;
+      font-size: 1.5em;
       color: #f97316;
-      margin-bottom: 30px;
-      font-family: 'Poppins', sans-serif;
     }
 
-    /* Estilo para listas y servicios */
-    ul {
-      font-size: 1.2em;
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin: 15px 0;
-    }
-
-    ul li i {
-      color: #f97316;
-      margin-right: 10px;
-    }
-
-    /* Galería de imágenes */
+    /* Estilos de la galería de imágenes */
     .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
     }
 
     .galeria img {
       width: 100%;
-      max-width: 250px;
       height: auto;
-      border-radius: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease;
     }
 
     .galeria img:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
-    /* Diseño responsivo */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5em;
-      }
-
-      .seccion {
-        padding: 20px;
-      }
-
-      footer {
-        font-size: 0.9em;
-      }
-
-      .contacto img {
-        width: 45px;
-        height: 45px;
-      }
-
-      .galeria img {
-        max-width: 200px;
-      }
-    }
   </style>
 </head>
 
@@ -209,58 +110,28 @@
   <!-- Sección ¿Quiénes somos? -->
   <section class="seccion">
     <div class="titulo">¿Quiénes somos?</div>
-    <p>En Dronix nos especializamos en ofrecer drones de alta calidad, así como servicios profesionales de mantenimiento y reparación. Nuestra misión es llevar la tecnología aérea a otro nivel, ofreciendo innovación, confianza y accesibilidad para todos.</p>
+    <p>En Dronix nos especializamos en ofrecer drones de alta calidad, así como servicios profesionales de mantenimiento y reparación. Nuestra misión es llevar la tecnología aérea a otro nivel.</p>
   </section>
 
   <!-- Sección Servicios -->
   <section class="seccion">
     <div class="titulo">Servicios</div>
     <ul>
-      <li><i class="fas fa-drone"></i> Venta de drones profesionales y recreativos</li>
-      <li><i class="fas fa-tools"></i> Mantenimiento preventivo y correctivo</li>
-      <li><i class="fas fa-headset"></i> Asesoría técnica personalizada</li>
+      <li>Venta de drones profesionales y recreativos</li>
+      <li>Mantenimiento preventivo y correctivo</li>
+      <li>Asesoría técnica personalizada</li>
     </ul>
   </section>
 
-  <!-- Sección Contacto -->
+  <!-- Sección Galería de Imágenes -->
   <section class="seccion">
-    <div class="titulo">Contáctanos</div>
-    <p>¿Tienes dudas o quieres cotizar un servicio? ¡Estamos para ayudarte!</p>
-    <a href="https://wa.me/524776120900" class="boton-contacto" target="_blank">Escríbenos por WhatsApp</a>
-  </section>
-
-  <!-- Sección Visión y Meta -->
-  <section class="seccion">
-    <div class="titulo">Visión y Meta</div>
-    <p><strong>Visión:</strong> Ser la empresa líder en el mercado de drones, proporcionando soluciones innovadoras y accesibles para profesionales y entusiastas. Buscamos transformar la forma en que las personas interactúan con la tecnología aérea, ofreciendo productos de calidad, servicio excepcional y un compromiso constante con la innovación.</p>
-    <p><strong>Meta:</strong> Proporcionar drones de alta calidad y servicios de mantenimiento con un enfoque en la excelencia técnica y la satisfacción del cliente. Nuestro objetivo es expandir nuestro alcance, convirtiéndonos en el proveedor principal para quienes buscan soluciones aéreas de vanguardia.</p>
-  </section>
-
-  <!-- Sección de subir imágenes de drones -->
-  <section class="seccion">
-    <div class="titulo">Sube tus imágenes de drones</div>
-    <form action="#" method="POST" enctype="multipart/form-data">
-      <input type="file" name="drone-image" accept="image/*" required>
-      <button type="submit" class="boton-contacto">Subir Imagen</button>
-    </form>
+    <div class="titulo">Galería de Drones</div>
     <div class="galeria">
-      <img src="drone1.jpg" alt="Drone 1">
-      <img src="drone2.jpg" alt="Drone 2">
-      <img src="drone3.jpg" alt="Drone 3">
+      <!-- Aquí van las imágenes de drones subidas manualmente desde Cloudinary -->
+      <img src="https://res.cloudinary.com/your-cloud-name/image/upload/vXXXXXXX/drone1.jpg" alt="Drone 1">
+      <img src="https://res.cloudinary.com/your-cloud-name/image/upload/vXXXXXXX/drone2.jpg" alt="Drone 2">
+      <img src="https://res.cloudinary.com/your-cloud-name/image/upload/vXXXXXXX/drone3.jpg" alt="Drone 3">
     </div>
-  </section>
-
-  <!-- Sección Redes Sociales -->
-  <section class="contacto">
-    <h3>¡Síguenos en nuestras redes sociales!</h3>
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/dronix_mex/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-    </a>
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/share/1A6NvFfBQo/?mibextid=wwXIfr" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-    </a>
   </section>
 
   <!-- Footer -->
