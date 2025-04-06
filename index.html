@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr" data-theme="dark">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +11,11 @@
   
   <title>DRONIX - Venta y Mantenimiento de Drones Profesionales</title>
 
-  <!-- Preconexión y precarga -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  
-  <!-- Estilos críticos optimizados -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <style>
     :root {
       --primary: #00f7ff;
@@ -29,7 +26,6 @@
       --container-width: min(1280px, 90%);
     }
 
-    /* Reset moderno */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -50,7 +46,6 @@
       font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
     }
 
-    /* Navegación mejorada */
     .navbar {
       position: fixed;
       top: 0;
@@ -104,7 +99,6 @@
       transition: var(--transition);
     }
 
-    /* Header mejorado */
     .hero {
       padding: 160px 2rem 100px;
       text-align: center;
@@ -125,7 +119,6 @@
       letter-spacing: -0.03em;
     }
 
-    /* Menú móvil accesible */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -145,7 +138,6 @@
       transition: var(--transition);
     }
 
-    /* Secciones principales */
     .section {
       padding: 4rem 2rem;
       width: var(--container-width);
@@ -168,13 +160,23 @@
       transition: var(--transition);
     }
 
-    /* Footer mejorado */
     footer {
       padding: 3rem 2rem;
       text-align: center;
       background: rgba(0, 0, 0, 0.6);
       margin-top: 4rem;
       backdrop-filter: blur(8px);
+    }
+
+    .social-links a {
+      color: white;
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
     }
 
     @media (max-width: 768px) {
@@ -206,7 +208,6 @@
       }
     }
 
-    /* Animaciones optimizadas */
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
@@ -217,7 +218,6 @@
       will-change: transform;
     }
 
-    /* Mejoras de accesibilidad */
     .sr-only {
       position: absolute;
       width: 1px;
@@ -236,13 +236,35 @@
     }
   </style>
 
-  <!-- Estilos diferidos -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
-</head>
+  <script>
+    (() => {
+      'use strict';
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      const NAV_OPEN_CLASS = 'active';
+      const ARIA_EXPANDED = 'aria-expanded';
 
+      function toggleMenu() {
+        const isExpanded = hamburger.getAttribute(ARIA_EXPANDED) === 'true';
+        hamburger.setAttribute(ARIA_EXPANDED, !isExpanded);
+        navLinks.classList.toggle(NAV_OPEN_CLASS);
+        document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+      }
+
+      function closeMenu(e) {
+        if (!e.target.closest('.nav-container')) {
+          hamburger.setAttribute(ARIA_EXPANDED, 'false');
+          navLinks.classList.remove(NAV_OPEN_CLASS);
+          document.body.style.overflow = 'auto';
+        }
+      }
+
+      hamburger.addEventListener('click', toggleMenu);
+      document.addEventListener('click', closeMenu);
+    })();
+  </script>
+</head>
 <body>
-  <!-- Navegación accesible -->
   <nav class="navbar" aria-label="Navegación principal">
     <div class="nav-container">
       <a href="#inicio" class="nav-logo">
@@ -263,7 +285,6 @@
     </div>
   </nav>
 
-  <!-- Contenido principal -->
   <main>
     <section class="hero" id="inicio">
       <h1 class="floating">DRONIX</h1>
@@ -275,37 +296,37 @@
       <div class="card-grid">
         <article class="card">
           <h3>Venta de Drones</h3>
-          <p>Vendemos drones profesionales para distintas aplicaciones.</p>
+          <p>Equipamiento profesional y recreativo de última generación</p>
         </article>
         <article class="card">
-          <h3>Mantenimiento</h3>
-          <p>Ofrecemos mantenimiento especializado para todo tipo de drones.</p>
+          <h3>Reparaciones</h3>
+          <p>Servicio técnico certificado con garantía</p>
         </article>
         <article class="card">
-          <h3>Fotografía Aérea</h3>
-          <p>Realizamos fotografías aéreas de alta calidad para proyectos profesionales.</p>
+          <h3>Capacitación</h3>
+          <p>Cursos de pilotaje profesional</p>
         </article>
       </div>
     </section>
 
-    <section class="section" id="precios">
-      <h2>Precios</h2>
-      <p>Aquí podrás encontrar una lista con nuestros precios actualizados.</p>
-    </section>
-
     <section class="section" id="contacto">
       <h2>Contacto</h2>
-      <p>¡Estamos aquí para ayudarte! Contáctanos para más información.</p>
+      <form class="contact-form" id="contactForm">
+        <!-- Formulario mejorado aquí -->
+      </form>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 DRONIX - Todos los derechos reservados.</p>
+  <footer aria-label="Información legal y redes sociales">
+    <div class="footer-content">
+      <p>&copy; 2025 DRONIX. Innovación en cada vuelo.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/dronix_mex" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/dronix_mex" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/dronix" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p>Contáctanos al: <a href="tel:+1234567890">+1 234 567 890</a></p>
+    </div>
   </footer>
-
-  <!-- Scripts deferidos -->
-  <script src="script.js" defer></script>
 </body>
-
 </html>
