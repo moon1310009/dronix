@@ -1,82 +1,57 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr" data-theme="dark">
+<html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DRONIX - Líderes en tecnología aérea. Venta, reparación y personalización de drones profesionales. Servicios de fotografía aérea y mapeo 3D.">
-  <meta name="keywords" content="drones, tecnología aérea, reparación de drones, fotografía aérea, drones profesionales">
-  <meta property="og:title" content="DRONIX - Tecnología Aérea de Vanguardia">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://tudominio.com/og-image.jpg">
-  
-  <title>DRONIX - Venta y Mantenimiento de Drones Profesionales</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap">
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+  <title>Dronix - Venta y Mantenimiento de Drones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     :root {
       --primary: #00f7ff;
       --secondary: #f97316;
       --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
       --glass-bg: rgba(255, 255, 255, 0.05);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --container-width: min(1280px, 90%);
-    }
-
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 80px;
     }
 
     body {
-      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
       background: var(--bg-gradient);
       color: white;
-      line-height: 1.6;
-      overflow-x: hidden;
-      font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      scroll-behavior: smooth;
     }
 
+    /* Nuevo Navbar Futurista */
     .navbar {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(12px);
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
       z-index: 1000;
-      padding: 0.75rem 0;
+      padding: 1rem 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: var(--transition);
     }
 
     .nav-container {
-      width: var(--container-width);
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 2rem;
     }
 
     .nav-logo {
-      width: 140px;
-      height: auto;
-      filter: drop-shadow(0 0 8px var(--primary));
-      transition: var(--transition);
+      width: 120px;
+      filter: drop-shadow(0 0 5px var(--primary));
     }
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
-      list-style: none;
+      gap: 2rem;
     }
 
     .nav-link {
@@ -84,249 +59,311 @@
       text-decoration: none;
       font-weight: 500;
       position: relative;
-      padding: 0.5rem 0;
-      transition: var(--transition);
+      transition: all 0.3s ease;
     }
 
     .nav-link::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: -5px;
       left: 0;
       width: 0;
       height: 2px;
       background: var(--primary);
-      transition: var(--transition);
+      transition: width 0.3s ease;
     }
 
-    .hero {
-      padding: 160px 2rem 100px;
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Header Mejorado */
+    header {
+      padding: 150px 50px 100px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      margin-top: 80px;
     }
 
-    .hero h1 {
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 247, 255, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2.5rem, 8vw, 4rem);
-      background: linear-gradient(45deg, var(--primary), #ffffff);
+      font-size: 4em;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
-      background-clip: text;
       -webkit-text-fill-color: transparent;
       margin: 1rem 0;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
+      text-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
     }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-      padding: 0.5rem;
-      z-index: 1001;
-    }
-
-    .hamburger div {
-      width: 30px;
-      height: 3px;
-      background-color: white;
-      border-radius: 3px;
-      transition: var(--transition);
-    }
-
-    .section {
-      padding: 4rem 2rem;
-      width: var(--container-width);
-      margin: 0 auto;
-    }
-
+    /* Tarjetas de Servicios */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
+      padding: 2rem;
     }
 
     .card {
       background: var(--glass-bg);
+      border-radius: 15px;
       padding: 2rem;
-      border-radius: 12px;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: var(--transition);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    footer {
-      padding: 3rem 2rem;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.6);
-      margin-top: 4rem;
-      backdrop-filter: blur(8px);
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 247, 255, 0.1);
     }
 
-    .social-links a {
-      color: white;
-      margin: 0 1rem;
+    .card h3 {
+      color: var(--primary);
+      font-family: 'Orbitron', sans-serif;
+      margin: 1rem 0;
+    }
+
+    /* Nuevo diseño para listas */
+    .price-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .price-item {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem;
+      background: var(--glass-bg);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .price-item i {
       font-size: 1.5rem;
-      transition: var(--transition);
-    }
-
-    .social-links a:hover {
+      margin-right: 1rem;
       color: var(--primary);
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(15px);
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .nav-links.active {
-        transform: translateX(0);
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .hero {
-        padding: 140px 1.5rem 80px;
-      }
+    /* Botones Mejorados */
+    .boton-contacto {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      border: none;
+      padding: 1rem 2rem;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
     }
 
+    .boton-contacto:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 247, 255, 0.5);
+    }
+
+    /* Sección de Contacto Mejorada */
+    .contact-section {
+      position: relative;
+      padding: 4rem 2rem;
+      text-align: center;
+      background: var(--glass-bg);
+      margin: 4rem auto;
+      max-width: 800px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Redes Sociales Futuristas */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .social-link {
+      font-size: 2rem;
+      color: white;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .social-link:hover {
+      color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    /* Animaciones Mejoradas */
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
     }
 
     .floating {
       animation: float 3s ease-in-out infinite;
-      will-change: transform;
     }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      border: 0;
+    /* Diseño Responsivo */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .navbar .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+
+      header {
+        padding: 120px 20px 80px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    :focus-visible {
-      outline: 2px solid var(--primary);
-      outline-offset: 3px;
-      border-radius: 2px;
+    /* Ícono de hamburguesa */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      border-radius: 5px;
     }
   </style>
-
-  <script>
-    (() => {
-      'use strict';
-      const hamburger = document.querySelector('.hamburger');
-      const navLinks = document.querySelector('.nav-links');
-      const NAV_OPEN_CLASS = 'active';
-      const ARIA_EXPANDED = 'aria-expanded';
-
-      function toggleMenu() {
-        const isExpanded = hamburger.getAttribute(ARIA_EXPANDED) === 'true';
-        hamburger.setAttribute(ARIA_EXPANDED, !isExpanded);
-        navLinks.classList.toggle(NAV_OPEN_CLASS);
-        document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
-      }
-
-      function closeMenu(e) {
-        if (!e.target.closest('.nav-container')) {
-          hamburger.setAttribute(ARIA_EXPANDED, 'false');
-          navLinks.classList.remove(NAV_OPEN_CLASS);
-          document.body.style.overflow = 'auto';
-        }
-      }
-
-      hamburger.addEventListener('click', toggleMenu);
-      document.addEventListener('click', closeMenu);
-    })();
-  </script>
 </head>
+
 <body>
-  <nav class="navbar" aria-label="Navegación principal">
+  <!-- Navbar -->
+  <nav class="navbar">
     <div class="nav-container">
-      <a href="#inicio" class="nav-logo">
-        <img src="logo_dronix.webp" alt="DRONIX - Inicio" width="140" height="40" loading="lazy">
-      </a>
-      
-      <ul class="nav-links" role="menubar">
-        <li role="none"><a href="#servicios" class="nav-link" role="menuitem">Servicios</a></li>
-        <li role="none"><a href="#precios" class="nav-link" role="menuitem">Precios</a></li>
-        <li role="none"><a href="#contacto" class="nav-link" role="menuitem">Contacto</a></li>
-      </ul>
-      
-      <button class="hamburger" aria-label="Menú móvil" aria-expanded="false" aria-controls="nav-links">
+      <img src="logo_dronix.png" alt="Dronix Logo" class="nav-logo">
+      <div class="nav-links">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#precios" class="nav-link">Precios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </div>
+      <!-- Ícono de hamburguesa para móviles -->
+      <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
-      </button>
+      </div>
     </div>
   </nav>
 
-  <main>
-    <section class="hero" id="inicio">
-      <h1 class="floating">DRONIX</h1>
-      <p>Tecnología Aérea de Vanguardia</p>
-    </section>
+  <!-- Header -->
+  <header>
+    <h1 class="floating">DRONIX</h1>
+    <p>Tecnología Aérea de Vanguardia</p>
+  </header>
 
-    <section class="section" id="servicios">
-      <h2>Nuestros Servicios</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Venta de Drones</h3>
-          <p>Equipamiento profesional y recreativo de última generación</p>
-        </article>
-        <article class="card">
-          <h3>Reparaciones</h3>
-          <p>Servicio técnico certificado con garantía</p>
-        </article>
-        <article class="card">
-          <h3>Capacitación</h3>
-          <p>Cursos de pilotaje profesional</p>
-        </article>
+  <!-- Servicios -->
+  <section id="servicios" class="seccion">
+    <div class="titulo">Nuestros Servicios</div>
+    <div class="card-grid">
+      <div class="card">
+        <i class="fas fa-drone fa-3x"></i>
+        <h3>Venta de Drones</h3>
+        <p>Equipos profesionales y recreativos con tecnología de última generación</p>
       </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <h2>Contacto</h2>
-      <form class="contact-form" id="contactForm">
-        <!-- Formulario mejorado aquí -->
-      </form>
-    </section>
-  </main>
-
-  <footer aria-label="Información legal y redes sociales">
-    <div class="footer-content">
-      <p>&copy; 2025 DRONIX. Innovación en cada vuelo.</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/dronix_mex" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/dronix_mex" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/company/dronix" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <div class="card">
+        <i class="fas fa-tools fa-3x"></i>
+        <h3>Mantenimiento</h3>
+        <p>Servicio técnico especializado y actualizaciones de software</p>
       </div>
-      <p>Contáctanos al: <a href="tel:+1234567890">+1 234 567 890</a></p>
+      <div class="card">
+        <i class="fas fa-headset fa-3x"></i>
+        <h3>Asesoría</h3>
+        <p>Soporte personalizado y capacitación técnica especializada</p>
+      </div>
     </div>
+  </section>
+
+  <!-- Precios -->
+  <section id="precios" class="seccion">
+    <div class="titulo">Nuestros Precios</div>
+    <div class="price-list">
+      <div class="price-item">
+        <i class="fas fa-fighter-jet"></i>
+        <div>
+          <h4>Dron Recreativo</h4>
+          <p>$6,500 MXN</p>
+        </div>
+      </div>
+      <!-- Más items de precios... -->
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact-section">
+    <div class="titulo">Contáctanos</div>
+    <p>¿Listo para elevar tu experiencia?</p>
+    <a href="https://wa.me/525667681754" class="boton-contacto">
+      <i class="fab fa-whatsapp"></i>
+      Contactar por WhatsApp
+    </a>
+  </section>
+
+  <!-- Redes Sociales -->
+  <div class="social-links">
+    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <footer>
+    &copy; 2025 Dronix. Innovación en cada vuelo.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 </body>
+
 </html>
