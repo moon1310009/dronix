@@ -11,7 +11,7 @@
     :root {
       --primary: #00f7ff;
       --secondary: #f97316;
-      --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      --bg-gradient: linear-gradient(135deg, #121212 0%, #1c1c1c 100%);
       --glass-bg: rgba(255, 255, 255, 0.05);
     }
 
@@ -23,7 +23,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Nuevo Navbar Futurista */
     .navbar {
       position: fixed;
       top: 0;
@@ -77,7 +76,6 @@
       width: 100%;
     }
 
-    /* Header Mejorado */
     header {
       padding: 150px 50px 100px;
       text-align: center;
@@ -106,7 +104,6 @@
       text-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
     }
 
-    /* Tarjetas de Servicios */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -134,7 +131,6 @@
       margin: 1rem 0;
     }
 
-    /* Nuevo diseño para listas */
     .price-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -157,7 +153,6 @@
       color: var(--primary);
     }
 
-    /* Botones Mejorados */
     .boton-contacto {
       display: inline-flex;
       align-items: center;
@@ -179,7 +174,6 @@
       box-shadow: 0 8px 25px rgba(0, 247, 255, 0.5);
     }
 
-    /* Sección de Contacto Mejorada */
     .contact-section {
       position: relative;
       padding: 4rem 2rem;
@@ -191,7 +185,6 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Redes Sociales Futuristas */
     .social-links {
       display: flex;
       justify-content: center;
@@ -211,7 +204,6 @@
       transform: translateY(-5px);
     }
 
-    /* Animaciones Mejoradas */
     @keyframes float {
       0% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
@@ -222,7 +214,6 @@
       animation: float 3s ease-in-out infinite;
     }
 
-    /* Diseño Responsivo */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -258,7 +249,6 @@
       }
     }
 
-    /* Ícono de hamburguesa */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -276,7 +266,6 @@
 </head>
 
 <body>
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
       <img src="logo_dronix.png" alt="Dronix Logo" class="nav-logo">
@@ -285,7 +274,6 @@
         <a href="#precios" class="nav-link">Precios</a>
         <a href="#contacto" class="nav-link">Contacto</a>
       </div>
-      <!-- Ícono de hamburguesa para móviles -->
       <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
@@ -294,13 +282,11 @@
     </div>
   </nav>
 
-  <!-- Header -->
   <header>
     <h1 class="floating">DRONIX</h1>
     <p>Tecnología Aérea de Vanguardia</p>
   </header>
 
-  <!-- Servicios -->
   <section id="servicios" class="seccion">
     <div class="titulo">Nuestros Servicios</div>
     <div class="card-grid">
@@ -322,7 +308,6 @@
     </div>
   </section>
 
-  <!-- Precios -->
   <section id="precios" class="seccion">
     <div class="titulo">Nuestros Precios</div>
     <div class="price-list">
@@ -333,11 +318,9 @@
           <p>$6,500 MXN</p>
         </div>
       </div>
-      <!-- Más items de precios... -->
     </div>
   </section>
 
-  <!-- Contacto -->
   <section id="contacto" class="contact-section">
     <div class="titulo">Contáctanos</div>
     <p>¿Listo para elevar tu experiencia?</p>
@@ -347,11 +330,10 @@
     </a>
   </section>
 
-  <!-- Redes Sociales -->
   <div class="social-links">
-    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/dronix_mex?igsh=MXJwZHV4cHFnODNhMg%3D%3D&utm_source=qr" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/share/1DWa3u5tRV/?mibextid=wwXIfr" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+    <a href="#" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
   </div>
 
   <footer>
