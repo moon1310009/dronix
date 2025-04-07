@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+x<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -11,7 +11,7 @@
     :root {
       --primary: #00f7ff;
       --secondary: #f97316;
-      --bg-gradient: linear-gradient(135deg, #121212 0%, #1c1c1c 100%);
+      --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
       --glass-bg: rgba(255, 255, 255, 0.05);
     }
 
@@ -32,6 +32,7 @@
       z-index: 1000;
       padding: 1rem 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: top 0.3s ease-in-out;
     }
 
     .nav-container {
@@ -79,19 +80,6 @@
     header {
       padding: 150px 50px 100px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(0, 247, 255, 0.1) 0%, transparent 60%);
-      pointer-events: none;
     }
 
     h1 {
@@ -196,7 +184,6 @@
       font-size: 2rem;
       color: white;
       transition: all 0.3s ease;
-      position: relative;
     }
 
     .social-link:hover {
@@ -204,14 +191,11 @@
       transform: translateY(-5px);
     }
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0px); }
-    }
-
-    .floating {
-      animation: float 3s ease-in-out infinite;
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
     }
 
     @media (max-width: 768px) {
@@ -225,48 +209,25 @@
         display: flex;
       }
 
-      .navbar .nav-container {
+      .hamburger {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .navbar .hamburger {
-        display: block;
+        flex-direction: column;
+        gap: 5px;
         cursor: pointer;
       }
 
-      header {
-        padding: 120px 20px 80px;
+      .hamburger div {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        border-radius: 5px;
       }
-
-      h1 {
-        font-size: 2.5em;
-      }
-
-      .card-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 30px;
-      height: 4px;
-      background-color: white;
-      border-radius: 5px;
     }
   </style>
 </head>
 
 <body>
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <img src="logo_dronix.png" alt="Dronix Logo" class="nav-logo">
       <div class="nav-links">
@@ -275,20 +236,17 @@
         <a href="#contacto" class="nav-link">Contacto</a>
       </div>
       <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div></div><div></div><div></div>
       </div>
     </div>
   </nav>
 
   <header>
-    <h1 class="floating">DRONIX</h1>
+    <h1>DRONIX</h1>
     <p>Tecnología Aérea de Vanguardia</p>
   </header>
 
-  <section id="servicios" class="seccion">
-    <div class="titulo">Nuestros Servicios</div>
+  <section id="servicios">
     <div class="card-grid">
       <div class="card">
         <i class="fas fa-drone fa-3x"></i>
@@ -308,8 +266,7 @@
     </div>
   </section>
 
-  <section id="precios" class="seccion">
-    <div class="titulo">Nuestros Precios</div>
+  <section id="precios">
     <div class="price-list">
       <div class="price-item">
         <i class="fas fa-fighter-jet"></i>
@@ -322,18 +279,17 @@
   </section>
 
   <section id="contacto" class="contact-section">
-    <div class="titulo">Contáctanos</div>
+    <h2>Contáctanos</h2>
     <p>¿Listo para elevar tu experiencia?</p>
     <a href="https://wa.me/525667681754" class="boton-contacto">
-      <i class="fab fa-whatsapp"></i>
-      Contactar por WhatsApp
+      <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
     </a>
   </section>
 
   <div class="social-links">
-    <a href="https://www.instagram.com/dronix_mex?igsh=MXJwZHV4cHFnODNhMg%3D%3D&utm_source=qr" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/share/1DWa3u5tRV/?mibextid=wwXIfr" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
-    <a href="#" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/dronix_mex?igsh=MXJwZHV4cHFnODNhMg%3D%3D&utm_source=qr" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/share/1DWa3u5tRV/?mibextid=wwXIfr" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
   </div>
 
   <footer>
@@ -345,7 +301,18 @@
       const navLinks = document.querySelector('.nav-links');
       navLinks.classList.toggle('active');
     }
+
+    let lastScroll = 0;
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 50) {
+        navbar.style.top = "-100px";
+      } else {
+        navbar.style.top = "0";
+      }
+      lastScroll = currentScroll;
+    });
   </script>
 </body>
-
 </html>
