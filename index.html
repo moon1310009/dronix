@@ -1,4 +1,4 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -7,6 +7,9 @@ x<!DOCTYPE html>
   <title>Dronix - Venta y Mantenimiento de Drones</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <style>
     :root {
       --primary: #00f7ff;
@@ -288,12 +291,11 @@ x<!DOCTYPE html>
 
   <div class="social-links">
     <a href="https://www.instagram.com/dronix_mex?igsh=MXJwZHV4cHFnODNhMg%3D%3D&utm_source=qr" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/share/1DWa3u5tRV/?mibextid=wwXIfr" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/share/1DWa3uawFjNzOx9L87fZo0B" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
   </div>
 
   <footer>
-    &copy; 2025 Dronix. Innovación en cada vuelo.
+    <p>&copy; 2025 Dronix. Todos los derechos reservados.</p>
   </footer>
 
   <script>
@@ -301,18 +303,7 @@ x<!DOCTYPE html>
       const navLinks = document.querySelector('.nav-links');
       navLinks.classList.toggle('active');
     }
-
-    let lastScroll = 0;
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > lastScroll && currentScroll > 50) {
-        navbar.style.top = "-100px";
-      } else {
-        navbar.style.top = "0";
-      }
-      lastScroll = currentScroll;
-    });
   </script>
 </body>
+
 </html>
