@@ -3,113 +3,168 @@ import "./App.css";
 
 export default function App() {
   return (
-    <div className="bg-gradient-to-b from-black to-gray-900 text-white font-poppins">
-      {/* Encabezado con presentación */}
-      <section className="text-center py-28 px-6">
-        <h1 className="text-5xl font-orbitron bg-gradient-to-r from-cyan-400 to-orange-500 text-transparent bg-clip-text mb-6">
-          Dronix
-        </h1>
-        <p className="text-xl mb-6">Tecnología Aérea de Vanguardia</p>
-        <p className="text-lg max-w-3xl mx-auto">
-          Somos una empresa especializada en venta, mantenimiento y personalización de drones. Trabajamos con equipos de alta tecnología y un equipo técnico especializado para brindarte el mejor servicio.
-        </p>
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white font-poppins overflow-x-hidden">
+      {/* Encabezado con Logo y Texto Centrado */}
+      <section className="relative text-center py-32 px-6 bg-[url('/images/dronix-bg.jpg')] bg-cover bg-center bg-no-repeat shadow-inner">
+        <div className="backdrop-blur-md bg-black/60 py-16 px-6 rounded-xl flex flex-col items-center">
+          <img
+            src="/images/dronix-logo.png"
+            alt="Logo de Dronix"
+            className="w-32 h-auto mb-6 drop-shadow-md"
+          />
+          <h1 className="text-6xl font-orbitron bg-gradient-to-r from-cyan-400 to-orange-500 text-transparent bg-clip-text mb-6 drop-shadow-xl">
+            Dronix
+          </h1>
+          <p className="text-xl mb-8">Tecnología Aérea de Vanguardia</p>
+          <p className="text-lg max-w-3xl mx-auto mb-8">
+            Nos especializamos en la venta, mantenimiento y personalización de drones para todos los niveles de experiencia. Unimos tecnología, innovación y atención personalizada.
+          </p>
+          <a
+            href="#contacto"
+            className="inline-block bg-gradient-to-r from-cyan-500 to-orange-500 hover:scale-105 transition text-white font-medium px-8 py-3 rounded-full shadow-xl"
+          >
+            Contáctanos
+          </a>
+        </div>
       </section>
 
-      {/* Sección: Servicios */}
-      <section id="servicios" className="px-6 py-16">
-        <h2 className="text-3xl font-semibold text-center mb-12">Nuestros Servicios</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+      {/* Sección de Servicios con Diseño Mejorado */}
+      <section id="servicios" className="px-6 py-24">
+        <h2 className="text-4xl font-bold text-center mb-16 tracking-wide text-cyan-400 font-orbitron">¿Qué hacemos?</h2>
+        <div className="grid md:grid-cols-3 gap-10">
           {[
             {
               icon: "fa-drone",
               title: "Venta de Drones",
-              desc: "Contamos con una variedad de drones profesionales y recreativos de marcas líderes."
+              desc: "Distribuimos modelos DJI, Neo y personalizados con garantía."
             },
             {
               icon: "fa-tools",
               title: "Mantenimiento Técnico",
-              desc: "Diagnóstico, reparación y reemplazo de piezas con técnicos certificados."
+              desc: "Diagnóstico, refacciones y pruebas de vuelo con técnicos certificados."
             },
             {
               icon: "fa-microchip",
-              title: "Drones Personalizados",
-              desc: "Armamos drones a medida, configurados según tus necesidades específicas."
+              title: "Configuración Pro",
+              desc: "Personalizamos tu drone desde el firmware hasta los controles."
             },
             {
-              icon: "fa-headset",
-              title: "Asesoría Técnica",
-              desc: "Capacitación y acompañamiento técnico en la operación de drones."
+              icon: "fa-camera",
+              title: "Foto y Video Aéreo",
+              desc: "Servicios de captura aérea profesional para eventos y empresas."
             },
             {
               icon: "fa-map-marker-alt",
               title: "Ubicación",
-              desc: "Estamos en León, Guanajuato. Atendemos de forma presencial y en línea."
+              desc: "Nos encuentras en León, Guanajuato. También atendemos en línea."
             },
             {
               icon: "fa-phone-alt",
-              title: "Contacto Telefónico",
-              desc: "Comunícate con nosotros al +52 566 768 1754."
+              title: "Llámanos",
+              desc: "+52 566 768 1754 vía WhatsApp o llamada directa."
             }
-          ].map((item, index) => (
-            <div key={index} className="bg-white/5 rounded-xl p-6 text-center border border-white/10 hover:shadow-lg transition">
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white/5 p-8 rounded-2xl border border-white/10 text-center shadow-md hover:shadow-cyan-500/30 transition duration-300" // Sutil hover
+            >
               <i className={`fas ${item.icon} fa-3x text-cyan-400 mb-4`}></i>
-              <h3 className="text-xl font-orbitron text-cyan-400 mb-2">{item.title}</h3>
-              <p>{item.desc}</p>
+              <h3 className="text-xl font-semibold text-white mb-2 font-orbitron">{item.title}</h3> {/* Texto blanco para contraste */}
+              <p className="text-gray-300">{item.desc}</p> {/* Texto un poco más claro */}
             </div>
           ))}
         </div>
       </section>
 
-      {/* Sección: Catálogo de Precios + Imagen */}
-      <section id="precios" className="px-6 py-20 bg-white/5 border-t border-white/10">
-        <h2 className="text-3xl font-semibold text-center mb-12">Catálogo de Productos y Servicios</h2>
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <img
-            src="/images/catalogo_drones.png"
-            alt="Tabla de drones"
-            className="rounded-xl shadow-xl border border-white/10"
-          />
-          <img
-            src="/images/tabla_mantenimiento.png"
-            alt="Precios de mantenimiento"
-            className="rounded-xl shadow-xl border border-white/10"
-          />
+      {/* Nuevo Catálogo Visual con Diseño de Tarjetas */}
+      <section id="catalogo" className="px-6 py-24 bg-black/10 border-y border-white/10">
+        <h2 className="text-4xl font-bold text-center mb-12 text-orange-500 font-orbitron">Nuestro Catálogo</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white/5 rounded-xl shadow-lg border border-white/10 overflow-hidden hover:scale-105 transition duration-300">
+            <img src="/images/dji_mini_2_se.png" alt="DJI Mini 2 SE" className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-cyan-400 mb-2 font-orbitron">DJI Mini 2 SE</h3>
+              <p className="text-gray-300 mb-3">Ultraligero y portátil.</p>
+              <p className="text-lg font-bold text-orange-500">$210</p>
+              {/* Puedes añadir un botón de "Ver Detalles" si tienes más información */}
+            </div>
+          </div>
+          <div className="bg-white/5 rounded-xl shadow-lg border border-white/10 overflow-hidden hover:scale-105 transition duration-300">
+            <img src="/images/dji_neo.png" alt="DJI Neo" className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-cyan-400 mb-2 font-orbitron">DJI Neo</h3>
+              <p className="text-gray-300 mb-3">Ligero y portátil.</p>
+              <p className="text-lg font-bold text-orange-500">$210</p>
+            </div>
+          </div>
+          <div className="bg-white/5 rounded-xl shadow-lg border border-white/10 overflow-hidden hover:scale-105 transition duration-300">
+            <img src="/images/dji_air_2s.png" alt="DJI Air 2S" className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-cyan-400 mb-2 font-orbitron">DJI Air 2S</h3>
+              <p className="text-gray-300 mb-3">Cámara 5.4K, alcance 12km, sensor 1 pulgada.</p>
+              <p className="text-lg font-bold text-orange-500">$920</p>
+            </div>
+          </div>
+          <div className="bg-white/5 rounded-xl shadow-lg border border-white/10 overflow-hidden hover:scale-105 transition duration-300">
+            <img src="/images/fpv_racer.png" alt="Dron FPV Racer Personalizado" className="w-full h-48 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-cyan-400 mb-2 font-orbitron">Dron FPV Racer Personalizado</h3>
+              <p className="text-gray-300 mb-3">Dron armado a medida, alta velocidad.</p>
+              <p className="text-lg font-bold text-orange-500">Desde $480</p>
+            </div>
+          </div>
+          {/* Puedes añadir más productos aquí siguiendo la misma estructura */}
         </div>
       </section>
 
-      {/* Sección: Contacto */}
-      <section id="contacto" className="text-center px-6 py-16">
-        <h2 className="text-2xl font-semibold mb-2">Contáctanos</h2>
-        <p className="mb-6">¿Listo para elevar tu experiencia?</p>
-        <a
-          href="https://wa.me/525667681754"
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-orange-500 text-white py-3 px-6 rounded-full shadow-lg hover:scale-105 transition"
-        >
-          <i className="fab fa-whatsapp"></i> Contactar por WhatsApp
-        </a>
+      {/* Sección de Mantenimiento General */}
+      <section className="px-6 py-24 bg-black/5 border-b border-white/10 text-center">
+        <h2 className="text-3xl font-bold mb-8 text-cyan-400 font-orbitron">Mantenimiento General</h2>
+        <div className="bg-white/10 p-10 rounded-xl shadow-lg max-w-md mx-auto">
+          <p className="text-4xl font-bold text-orange-500 mb-4">$1,200</p>
+          <p className="text-lg text-gray-300">+ Incluye inspección y reparación de componentes</p>
+          {/* Puedes añadir un botón de "Agendar Servicio" aquí */}
+        </div>
       </section>
 
-      {/* Redes Sociales */}
-      <div className="flex justify-center gap-6 text-2xl mb-10">
+      {/* Contacto Mejorado */}
+      <section id="contacto" className="text-center px-6 py-20">
+        <h2 className="text-3xl font-bold mb-6 text-cyan-400 font-orbitron">Contáctanos</h2>
+        <p className="mb-8 text-lg text-gray-300">¿Listo para despegar con nosotros? ¡Estamos aquí para ayudarte!</p>
+        <div className="flex justify-center gap-4">
+          <a
+            href="https://wa.me/525667681754"
+            className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white py-3 px-8 rounded-full text-lg shadow-lg transition duration-300"
+          >
+            <i className="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          {/* Puedes añadir un botón para un formulario de contacto si lo implementas */}
+        </div>
+      </section>
+
+      {/* Redes sociales con estilo */}
+      <div className="flex justify-center gap-8 text-3xl py-10 bg-black/20">
         <a
           href="https://www.instagram.com/dronix_mex"
           target="_blank"
-          className="hover:text-cyan-400"
+          className="hover:text-cyan-400 transition duration-300"
+          aria-label="Instagram"
         >
           <i className="fab fa-instagram"></i>
         </a>
         <a
           href="https://www.facebook.com/share/1DWa3uawFjNzOx9L87fZo0B"
           target="_blank"
-          className="hover:text-cyan-400"
+          className="hover:text-cyan-400 transition duration-300"
+          aria-label="Facebook"
         >
           <i className="fab fa-facebook"></i>
         </a>
       </div>
 
-      {/* Footer */}
-      <footer className="text-center text-sm text-gray-400 pb-10">
-        &copy; 2025 Dronix. Todos los derechos reservados.
+      {/* Footer Moderno */}
+      <footer className="text-center text-sm text-gray-400 py-12 bg-black/30">
+        &copy; {new Date().getFullYear()} Dronix. Todos los derechos reservados.
       </footer>
     </div>
   );
