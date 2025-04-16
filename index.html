@@ -1,309 +1,116 @@
-<!DOCTYPE html>
-<html lang="es">
+import React from "react";
+import "./App.css";
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dronix - Venta y Mantenimiento de Drones</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+export default function App() {
+  return (
+    <div className="bg-gradient-to-b from-black to-gray-900 text-white font-poppins">
+      {/* Encabezado con presentación */}
+      <section className="text-center py-28 px-6">
+        <h1 className="text-5xl font-orbitron bg-gradient-to-r from-cyan-400 to-orange-500 text-transparent bg-clip-text mb-6">
+          Dronix
+        </h1>
+        <p className="text-xl mb-6">Tecnología Aérea de Vanguardia</p>
+        <p className="text-lg max-w-3xl mx-auto">
+          Somos una empresa especializada en venta, mantenimiento y personalización de drones. Trabajamos con equipos de alta tecnología y un equipo técnico especializado para brindarte el mejor servicio.
+        </p>
+      </section>
 
-  <style>
-    :root {
-      --primary: #00f7ff;
-      --secondary: #f97316;
-      --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-      --glass-bg: rgba(255, 255, 255, 0.05);
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-gradient);
-      color: white;
-      scroll-behavior: smooth;
-    }
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: top 0.3s ease-in-out;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-    }
-
-    .nav-logo {
-      width: 120px;
-      filter: drop-shadow(0 0 5px var(--primary));
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-link {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    header {
-      padding: 150px 50px 100px;
-      text-align: center;
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 4em;
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 1rem 0;
-      text-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-
-    .card {
-      background: var(--glass-bg);
-      border-radius: 15px;
-      padding: 2rem;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0, 247, 255, 0.1);
-    }
-
-    .card h3 {
-      color: var(--primary);
-      font-family: 'Orbitron', sans-serif;
-      margin: 1rem 0;
-    }
-
-    .price-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-
-    .price-item {
-      display: flex;
-      align-items: center;
-      padding: 1.5rem;
-      background: var(--glass-bg);
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .price-item i {
-      font-size: 1.5rem;
-      margin-right: 1rem;
-      color: var(--primary);
-    }
-
-    .boton-contacto {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
-      border: none;
-      padding: 1rem 2rem;
-      color: white;
-      font-size: 1.1rem;
-      cursor: pointer;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
-    }
-
-    .boton-contacto:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0, 247, 255, 0.5);
-    }
-
-    .contact-section {
-      position: relative;
-      padding: 4rem 2rem;
-      text-align: center;
-      background: var(--glass-bg);
-      margin: 4rem auto;
-      max-width: 800px;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .social-link {
-      font-size: 2rem;
-      color: white;
-      transition: all 0.3s ease;
-    }
-
-    .social-link:hover {
-      color: var(--primary);
-      transform: translateY(-5px);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-      }
-
-      .hamburger div {
-        width: 30px;
-        height: 4px;
-        background-color: white;
-        border-radius: 5px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <img src="logo_dronix.png" alt="Dronix Logo" class="nav-logo">
-      <div class="nav-links">
-        <a href="#servicios" class="nav-link">Servicios</a>
-        <a href="#precios" class="nav-link">Precios</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
-      </div>
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div><div></div><div></div>
-      </div>
-    </div>
-  </nav>
-
-  <header>
-    <h1>DRONIX</h1>
-    <p>Tecnología Aérea de Vanguardia</p>
-  </header>
-
-  <section id="servicios">
-    <div class="card-grid">
-      <div class="card">
-        <i class="fas fa-drone fa-3x"></i>
-        <h3>Venta de Drones</h3>
-        <p>Equipos profesionales y recreativos con tecnología de última generación</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-tools fa-3x"></i>
-        <h3>Mantenimiento</h3>
-        <p>Servicio técnico especializado y actualizaciones de software</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-headset fa-3x"></i>
-        <h3>Asesoría</h3>
-        <p>Soporte personalizado y capacitación técnica especializada</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="precios">
-    <div class="price-list">
-      <div class="price-item">
-        <i class="fas fa-fighter-jet"></i>
-        <div>
-          <h4>Dron Recreativo</h4>
-          <p>$6,500 MXN</p>
+      {/* Sección: Servicios */}
+      <section id="servicios" className="px-6 py-16">
+        <h2 className="text-3xl font-semibold text-center mb-12">Nuestros Servicios</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              icon: "fa-drone",
+              title: "Venta de Drones",
+              desc: "Contamos con una variedad de drones profesionales y recreativos de marcas líderes."
+            },
+            {
+              icon: "fa-tools",
+              title: "Mantenimiento Técnico",
+              desc: "Diagnóstico, reparación y reemplazo de piezas con técnicos certificados."
+            },
+            {
+              icon: "fa-microchip",
+              title: "Drones Personalizados",
+              desc: "Armamos drones a medida, configurados según tus necesidades específicas."
+            },
+            {
+              icon: "fa-headset",
+              title: "Asesoría Técnica",
+              desc: "Capacitación y acompañamiento técnico en la operación de drones."
+            },
+            {
+              icon: "fa-map-marker-alt",
+              title: "Ubicación",
+              desc: "Estamos en León, Guanajuato. Atendemos de forma presencial y en línea."
+            },
+            {
+              icon: "fa-phone-alt",
+              title: "Contacto Telefónico",
+              desc: "Comunícate con nosotros al +52 566 768 1754."
+            }
+          ].map((item, index) => (
+            <div key={index} className="bg-white/5 rounded-xl p-6 text-center border border-white/10 hover:shadow-lg transition">
+              <i className={`fas ${item.icon} fa-3x text-cyan-400 mb-4`}></i>
+              <h3 className="text-xl font-orbitron text-cyan-400 mb-2">{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
         </div>
+      </section>
+
+      {/* Sección: Catálogo de Precios + Imagen */}
+      <section id="precios" className="px-6 py-20 bg-white/5 border-t border-white/10">
+        <h2 className="text-3xl font-semibold text-center mb-12">Catálogo de Productos y Servicios</h2>
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <img
+            src="/images/catalogo_drones.png"
+            alt="Tabla de drones"
+            className="rounded-xl shadow-xl border border-white/10"
+          />
+          <img
+            src="/images/tabla_mantenimiento.png"
+            alt="Precios de mantenimiento"
+            className="rounded-xl shadow-xl border border-white/10"
+          />
+        </div>
+      </section>
+
+      {/* Sección: Contacto */}
+      <section id="contacto" className="text-center px-6 py-16">
+        <h2 className="text-2xl font-semibold mb-2">Contáctanos</h2>
+        <p className="mb-6">¿Listo para elevar tu experiencia?</p>
+        <a
+          href="https://wa.me/525667681754"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-orange-500 text-white py-3 px-6 rounded-full shadow-lg hover:scale-105 transition"
+        >
+          <i className="fab fa-whatsapp"></i> Contactar por WhatsApp
+        </a>
+      </section>
+
+      {/* Redes Sociales */}
+      <div className="flex justify-center gap-6 text-2xl mb-10">
+        <a
+          href="https://www.instagram.com/dronix_mex"
+          target="_blank"
+          className="hover:text-cyan-400"
+        >
+          <i className="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://www.facebook.com/share/1DWa3uawFjNzOx9L87fZo0B"
+          target="_blank"
+          className="hover:text-cyan-400"
+        >
+          <i className="fab fa-facebook"></i>
+        </a>
       </div>
+
+      {/* Footer */}
+      <footer className="text-center text-sm text-gray-400 pb-10">
+        &copy; 2025 Dronix. Todos los derechos reservados.
+      </footer>
     </div>
-  </section>
-
-  <section id="contacto" class="contact-section">
-    <h2>Contáctanos</h2>
-    <p>¿Listo para elevar tu experiencia?</p>
-    <a href="https://wa.me/525667681754" class="boton-contacto">
-      <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-    </a>
-  </section>
-
-  <div class="social-links">
-    <a href="https://www.instagram.com/dronix_mex?igsh=MXJwZHV4cHFnODNhMg%3D%3D&utm_source=qr" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/share/1DWa3uawFjNzOx9L87fZo0B" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Dronix. Todos los derechos reservados.</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.classList.toggle('active');
-    }
-  </script>
-</body>
-
-</html>
+  );
+}
